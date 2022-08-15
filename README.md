@@ -18,6 +18,7 @@
 
     5、PG数据库内核解读 - 第五节 索引1 [视频链接]() [演讲材料]() [相关命令]()
 
+   [视频链接](https://www.bilibili.com/video/BV1gV4y147D7?spm_id_from=333.999.0.0&vd_source=70bd93807a27926fda1db56ec32ef895) 
 
 ## 二、数据库架构解读
 
