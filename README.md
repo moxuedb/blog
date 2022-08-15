@@ -8,7 +8,8 @@
 
 面向DBA、高校学生、内核爱好者，介绍PG内核架构、各模块基本原理、用法、代码实现。希望通过课程学习，让没有内核经验的同学和DBA，也可以进行简单的特性开发，更深入理解PG配置和运行原理。本课程包含15个章节，系统化介绍PG架构、SQL引擎、执行引擎、存储引擎、并发控制、HA、分布式等核心技术原理和代码实现。
 
-    1、PG数据库内核解读 - 第一节 系统概述 [视频链接](https://www.bilibili.com/video/BV1gV4y147D7?spm_id_from=333.999.0.0&vd_source=70bd93807a27926fda1db56ec32ef895) [演讲材料](https://github.com/moxuedb/blog/PostgresKernel/Chapter-01/PG数据库内核解读-1.系统概述.pdf) [相关命令](https://github.com/moxuedb/blog/PostgresKernel/Chapter-01/PG数据库内核解读-1.系统概述相关命令.txt)
+    1、PG数据库内核解读 - 第一节 系统概述 
+    [视频链接](https://www.bilibili.com/video/BV1gV4y147D7?spm_id_from=333.999.0.0&vd_source=70bd93807a27926fda1db56ec32ef895) [演讲材料](https://github.com/moxuedb/blog/PostgresKernel/Chapter-01/PG数据库内核解读-1.系统概述.pdf) [相关命令](https://github.com/moxuedb/blog/PostgresKernel/Chapter-01/PG数据库内核解读-1.系统概述相关命令.txt)
 
     2、PG数据库内核解读 - 第二节 体系架构 [视频链接](https://www.bilibili.com/video/BV1VV4y1s7i7?spm_id_from=333.999.0.0&vd_source=70bd93807a27926fda1db56ec32ef895) [演讲材料](https://github.com/moxuedb/blog/PostgresKernel/Chapter-02/PG数据库内核解读-2.体系架构.pdf) [相关命令](https://github.com/moxuedb/blog/PostgresKernel/Chapter-02/PG数据库内核解读-2.体系架构相关命令.txt)
 
@@ -17,8 +18,6 @@
     4、PG数据库内核解读 - 第四节 存储管理2 [视频链接](https://www.bilibili.com/video/BV11T411w788?spm_id_from=333.999.0.0&vd_source=70bd93807a27926fda1db56ec32ef895) [演讲材料](https://github.com/moxuedb/blog/PostgresKernel/Chapter-04/PG数据库内核解读-4.存储管理2.pdf)
 
     5、PG数据库内核解读 - 第五节 索引1 [视频链接]() [演讲材料]() [相关命令]()
-
-   [视频链接](https://www.bilibili.com/video/BV1gV4y147D7?spm_id_from=333.999.0.0&vd_source=70bd93807a27926fda1db56ec32ef895) 
 
 ## 二、数据库架构解读
 
@@ -49,8 +48,8 @@
 
 
 加入 PolarDB 技术推广组钉钉群:
-    ![polardb_group](https://github.com/moxuedb/blog/polardb_group.png)
+    [polardb_group](https://github.com/moxuedb/blog/polardb_group.png)
 
 微信加好友：
-    ![漠雪的微信](https://github.com/moxuedb/blog/moxue_wechat.png)
+    [漠雪的微信](https://github.com/moxuedb/blog/moxue_wechat.png)
 
