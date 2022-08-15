@@ -50,8 +50,8 @@
 
 
 加入 PolarDB 技术推广组钉钉群:
-！[polardb_group](https://github.com/moxuedb/blog/polardb_group.png)
+[polardb_group](https://github.com/moxuedb/blog/polardb_group.png)
 
 微信加好友：
-！[漠雪的微信](https://github.com/moxuedb/blog/moxue_wechat.png)
+[漠雪的微信](https://github.com/moxuedb/blog/moxue_wechat.png)
 
