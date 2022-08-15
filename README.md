@@ -11,8 +11,8 @@
 
 1、PG数据库内核解读 - 第一节 系统概述 
 [视频链接](https://www.bilibili.com/video/BV1gV4y147D7?spm_id_from=333.999.0.0&vd_source=70bd93807a27926fda1db56ec32ef895) 
-[演讲材料](https://github.com/moxuedb/blog/PostgresKernel/Chapter-01/PG数据库内核解读-1.系统概述.pdf) 
-[相关命令](https://github.com/moxuedb/blog/PostgresKernel/Chapter-01/PG数据库内核解读-1.系统概述相关命令.txt)
+[演讲材料](https://github.com/moxuedb/blog/blob/main/PostgresKernel/Chapter-01/PG%E6%95%B0%E6%8D%AE%E5%BA%93%E5%86%85%E6%A0%B8%E8%A7%A3%E8%AF%BB-1.%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.pdf) 
+[相关命令](https://github.com/moxuedb/blog/blob/main/PostgresKernel/Chapter-01/PG%E6%95%B0%E6%8D%AE%E5%BA%93%E5%86%85%E6%A0%B8%E8%A7%A3%E8%AF%BB-1.%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4.txt)
 
 2、PG数据库内核解读 - 第二节 体系架构 [视频链接](https://www.bilibili.com/video/BV1VV4y1s7i7?spm_id_from=333.999.0.0&vd_source=70bd93807a27926fda1db56ec32ef895) [演讲材料](https://github.com/moxuedb/blog/PostgresKernel/Chapter-02/PG数据库内核解读-2.体系架构.pdf) [相关命令](https://github.com/moxuedb/blog/PostgresKernel/Chapter-02/PG数据库内核解读-2.体系架构相关命令.txt)
 
