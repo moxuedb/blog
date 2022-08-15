@@ -1,0 +1,73 @@
+1. 查看系统中表：
+  select * from pg_class;
+  select oid,relname,relfilenode from pg_class where relname = 't1';
+  select * from information_schema.tables;
+  select * from pg_catalog.pg_tables;
+  select * from pg_tablespace;
+  select name, setting, short_desc from pg_settings where name like '%vacuum%';
+
+2. 调优，库命中率，表命中率， 表大小
+  库命中率:
+  select blks_read,blks_hit,
+  blks_hit::numeric / (blks_read + blks_hit ) as ratio
+  from pg_stat_database
+  where datname = 'postgres';
+
+  表命中率:
+  SELECT relname, heap_blks_read, heap_blks_hit,
+  round(heap_blks_hit::numeric/(heap_blks_hit + heap_blks_read), 3)
+  FROM pg_statio_user_tables
+  WHERE heap_blks_read > 0
+  ORDER BY 2 DESC ;
+
+  表大小:
+  select relname, pg_size_pretty(pg_relation_size(relid)) from pg_stat_user_tables where
+  schemaname='public' order by pg_relation_size(relid) desc;
+
+3. pg_stat_statements性能插件
+
+  create extension pg_stat_statements; // 需要添加shared_preload_libraries = ‘pg_stat_statements‘ 参数
+
+  总最耗IO SQL TOP 5
+  select * from pg_stat_statements order by (blk_read_time+blk_write_time) desc limit 5;
+
+  最耗时SQL，单次调用最耗时SQL TOP 5
+  select userid::regrole, dbid, query from pg_stat_statements order by mean_time desc limit 5;
+
+  最耗临时空间SQL
+  select userid::regrole, dbid, query from pg_stat_statements order by temp_blks_written desc limit 5;
+
+
+4、PG常用配置：
+  logging_collector = on
+  log_directory = 'log'
+  log_filename = 'postgresql-%a.log'
+  log_truncate_on_rotation = on
+  log_rotation_age = 1d
+  log_rotation_size = 0
+  log_checkpoints = on
+  log_connections = on
+  log_disconnections = on
+  log_error_verbosity = terse
+  log_line_prefix = '%m [%p] '
+  log_timezone = 'PRC'
+  log_autovacuum_min_duration = 0
+  log_min_error_statement = fatal
+  autovacuum_max_workers = 16
+  autovacuum_freeze_max_age = 1200000000
+  autovacuum_multixact_freeze_max_age = 1400000000
+  autovacuum_vacuum_cost_delay = 0ms
+  vacuum_freeze_table_age = 1150000000
+  vacuum_multixact_freeze_table_age = 1150000000
+  vacuum_cost_delay = 10 # 0-100 milliseconds
+  vacuum_cost_limit = 4000
+  vacuum_delta = 2000
+  bgwriter_delay = 10ms
+  bgwriter_lru_maxpages = 1000
+  bgwriter_lru_multiplier = 10.0
+  checkpoint_timeout = 30min
+  checkpoint_completion_target = 0.9
+  wal_level = minimal
+  wal_writer_delay = 10ms
+
+

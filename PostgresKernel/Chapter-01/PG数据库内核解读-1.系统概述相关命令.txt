@@ -1,0 +1,103 @@
+1. 源码下载：
+    git clone https://github.com/postgres/postgres.git
+    cd postgres
+    git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done
+      git fetch --all
+      git pull –all
+    git branch
+    git checkout REL_11_STABLE
+
+
+2. 源码编译安装：
+   ./configure -help
+    ./configure --prefix=/home/michael.yw/pghome --enable-debug --enable-cassert CFLAGS="-ggdb -O0 -g3 -Wall -fno-omit-frame-pointer -fstack-protector-strong" -- Debug版
+    ./configure --prefix=/home/michael.yw/pghome --enable-debug --enable-cassert CFLAGS="-g -O2 -Wall -fno-omit-frame-pointer -fstack-protector-strong" – Release版
+
+    make -sj && make install
+    make world && make install-world
+
+3. 设置环境变量：
+
+  vi ~/.bashrc  
+
+  export PATH="/home/michael.yw/pghome/bin:$PATH"
+  export LD_LIBRARY_PATH="/home/michael.yw/pghome/lib:$LD_LIBRARY_PATH"
+  export PGHOME="/home/michael.yw/pghome"
+  export PGDATA="/home/michael.yw/pgdata"
+
+  source ~/.bashrc
+
+4. 初始化数据库
+    initdb -D /home/michael.yw/pgdata 
+
+
+5. 参数修改
+  vi /home/michael.yw/pgdata/postgresql.conf 
+
+      max_connections = 100
+      max_wal_senders = 10
+      max_replication_slots = 10
+      max_worker_processes = 10
+      shared_preload_libraries = 'pg_stat_statements'
+      listen_addresses = '*'
+      port = 6688                          
+
+      logging_collector = on
+      log_directory = 'log'
+      log_filename = 'postgresql-%a.log'
+      log_truncate_on_rotation = on
+      log_rotation_age = 1d
+      log_rotation_size = 0
+      log_checkpoints = on
+      log_connections = on
+      log_disconnections = on
+      log_error_verbosity = verbose
+      log_line_prefix = '%m [%p] '
+      log_timezone = 'PRC'
+      log_autovacuum_min_duration = 0
+
+6. 数据库启动、停止：
+
+    pg_ctl -D /home/michael.yw/pgdata -l /home/michael.yw/pgdata/logfile1 start
+    pg_ctl -D /home/michael.yw/pgdata -l /home/michael.yw/pgdata/logfile1 stop
+
+7.连接数据库
+    psql -p 6688 -d postgres
+
+8. 数据库基本操作
+    create table t1(a int, b text);
+    insert into t1 values(1, 'aa');
+    select * from t1;
+
+    create table t2(id int);
+    insert into t2 select generate_series(1,1000);
+
+
+9. 常用命令
+  cd /home/michael.yw/pghome/bin 
+  ll /home/michael.yw/pghome/bin 
+  createdb --help 
+  createdb -p 6688 test;
+  pg_config
+  pg_ctl -help
+  pg_dump -help
+  pg_dump -p 6688 -d postgres -t t1 -f t1.sql;
+  cat t1.sql
+  pg_controldata
+  cd /home/michael.yw/pghome/lib/postgresql
+
+10. 调试
+  ps -ef|grep michael
+  select pg_backend_pid();
+  pstack 37612
+  gdb postgres 96897
+    bt  -- 显示堆栈
+    f 8 -- 查看堆栈中不同层级函数
+    l  -- 查看周围代码
+    b exec_simple_query  -- 设置断点
+    info b  -- 显示断点
+     C+x a – 查看代码
+
+  select * from t1;
+
+
