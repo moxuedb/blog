@@ -31,9 +31,9 @@
 
 2、阿里云数据库性能测试及优化实践@信通院性能工具发布会 [视频链接](https://www.bilibili.com/video/BV1Ed4y1o7SE?spm_id_from=333.999.0.0&vd_source=70bd93807a27926fda1db56ec32ef895) [演讲材料](https://github.com/moxuedb/blog/blob/main/DatabaseArchitect/%E9%98%BF%E9%87%8C%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%8F%8A%E4%BC%98%E5%8C%96%E5%AE%9E%E8%B7%B5-%E4%BF%A1%E9%80%9A%E9%99%A2%E6%80%A7%E8%83%BD%E5%B7%A5%E5%85%B7%E5%8F%91%E5%B8%83%E4%BC%9A.pdf)
 
-3、加密技术及阿里云数据库加密实践@信通院数安Talk  [视频链接](https://applykaz7gv6223.h5.xiaoeknow.com/v2/course/alive/l_627a25c0e4b0812e179790c2?app_id=appLyKaz7gV6223&pro_id=&type=2&available=true&share_user_id=u_5f26cd4df201e_oWQ1sj3xSF&share_type=5&scene=%E5%88%86%E4%BA%AB&is_redirect=1&share_scene=1&entry=2&entry_type=2002) [演讲材料](https://github.com/moxuedb/blog/blob/main/DatabaseArchitect/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF%E5%8F%8A%E9%98%BF%E9%87%8C%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E8%B7%B5-%E4%BF%A1%E9%80%9A%E9%99%A2%E6%95%B0%E5%AE%89Talk.pdf)
+3、加密技术及阿里云数据库加密实践@信通院数安Talk  [视频链接](https://www.bilibili.com/video/BV1zG4y1a7Ca?spm_id_from=333.999.0.0&vd_source=70bd93807a27926fda1db56ec32ef895) [演讲材料](https://github.com/moxuedb/blog/blob/main/DatabaseArchitect/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF%E5%8F%8A%E9%98%BF%E9%87%8C%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E8%B7%B5-%E4%BF%A1%E9%80%9A%E9%99%A2%E6%95%B0%E5%AE%89Talk.pdf)
 
-4、数据库架构概述和技术演进趋势@专利代理师培训 [视频链接](https://www.bilibili.com/video/BV1jP411j7mp?spm_id_from=333.999.0.0&vd_source=70bd93807a27926fda1db56ec32ef895) [演讲材料](https://github.com/moxuedb/blog/blob/main/DatabaseArchitect/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9E%B6%E6%9E%84%E6%A6%82%E8%BF%B0%E5%92%8C%E6%8A%80%E6%9C%AF%E6%BC%94%E8%BF%9B%E8%B6%8B%E5%8A%BF-%E4%B8%93%E5%88%A9%E4%BB%A3%E7%90%86%E5%B8%88%E5%9F%B9%E8%AE%AD.pdf)
+4、数据库架构概述和技术演进趋势@专利代理师培训 [视频链接](https://www.bilibili.com/video/BV1zG4y1a7Ca?spm_id_from=333.999.0.0&vd_source=70bd93807a27926fda1db56ec32ef895) [演讲材料](https://github.com/moxuedb/blog/blob/main/DatabaseArchitect/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9E%B6%E6%9E%84%E6%A6%82%E8%BF%B0%E5%92%8C%E6%8A%80%E6%9C%AF%E6%BC%94%E8%BF%9B%E8%B6%8B%E5%8A%BF-%E4%B8%93%E5%88%A9%E4%BB%A3%E7%90%86%E5%B8%88%E5%9F%B9%E8%AE%AD.pdf)
 
 
 ## 三、国际主流数据库架构解读
