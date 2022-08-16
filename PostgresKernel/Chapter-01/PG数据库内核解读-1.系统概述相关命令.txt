@@ -1,3 +1,6 @@
+# Made by moxue@Alibaba for PG kernel Serials Class- Chapter 1 System Overview.
+# https://github.com/moxuedb/blog
+
 1. 源码下载：
     git clone https://github.com/postgres/postgres.git
     cd postgres
