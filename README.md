@@ -20,7 +20,7 @@
 
 4、PG数据库内核解读 - 第四节 存储管理2 [视频链接](https://www.bilibili.com/video/BV11T411w788?spm_id_from=333.999.0.0&vd_source=70bd93807a27926fda1db56ec32ef895) [演讲材料](https://github.com/moxuedb/blog/blob/main/PostgresKernel/Chapter-04/PG%E6%95%B0%E6%8D%AE%E5%BA%93%E5%86%85%E6%A0%B8%E8%A7%A3%E8%AF%BB-4.%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%862.pdf)
 
-5、PG数据库内核解读 - 第五节 索引1 [视频链接]() [演讲材料](https://github.com/moxuedb/blog/blob/main/PostgresKernel/Chapter-05/5.%E7%B4%A2%E5%BC%951.pdf) [相关命令](https://github.com/moxuedb/blog/blob/main/PostgresKernel/Chapter-05/%E7%AC%AC5%E8%8A%82%E7%B4%A2%E5%BC%951%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4.txt)
+5、PG数据库内核解读 - 第五节 索引1 [视频链接](https://www.bilibili.com/video/BV1hB4y1B7xh?spm_id_from=333.999.0.0&vd_source=70bd93807a27926fda1db56ec32ef895) [演讲材料](https://github.com/moxuedb/blog/blob/main/PostgresKernel/Chapter-05/5.%E7%B4%A2%E5%BC%951.pdf) [相关命令](https://github.com/moxuedb/blog/blob/main/PostgresKernel/Chapter-05/%E7%AC%AC5%E8%8A%82%E7%B4%A2%E5%BC%951%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4.txt)
 
 
 ## 二、数据库架构、技术趋势、运维解读
