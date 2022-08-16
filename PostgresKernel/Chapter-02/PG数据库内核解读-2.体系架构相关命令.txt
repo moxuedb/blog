@@ -1,3 +1,6 @@
+# Made by moxue@Alibaba for PG kernel Serials Class- Chapter 2 System Architect.
+# https://github.com/moxuedb/blog
+
 1. 查看系统中表：
   select * from pg_class;
   select oid,relname,relfilenode from pg_class where relname = 't1';
