@@ -1,0 +1,103 @@
+# Made by moxue@Alibaba for PG kernel Serials Class- Chapter 5 index.
+# https://github.com/moxuedb/blog
+
+   1、Index scan
+        create table t(a integer, b text, c boolean);
+        insert into t(a,b,c)
+          select s.id, chr((32+random()*94)::integer), random() < 0.01
+          from generate_series(1,100000) as s(id)
+          order by random();
+
+        create index on t(a);
+        analyze t;
+        explain (costs off) select * from t where a = 1;
+
+    2、Bitmap scan
+
+        explain (costs off) select * from t where a <= 100;
+
+        create index on t(b);
+        analyze t;
+        explain (costs off) select * from t where a <= 100 and b = 'a';
+
+    3、correlation
+        select attname, correlation from pg_stats where tablename = 't';
+
+    4、Covering indexes -index only scan。
+        vacuum t;
+        explain (analyze, costs off) select a from t where a < 100;
+
+
+    5、多列索引 Indexes on several fields
+
+        create index on t(a,b);
+        analyze t;
+        explain (costs off) select * from t where a <= 100 and b = 'a';
+
+    6、Indexes on expressions
+        create index on t(lower(b));
+        analyze t;
+        explain (costs off) select * from t where lower(b) = 'a';
+
+    7、Partial indexes
+        create index on t(c);
+        analyze t;
+        select relpages from pg_class where relname='t_c_idx';
+
+        create index on t(c) where c;
+        analyze t;
+        select relpages from pg_class where relname='t_c_idx1';
+
+    8、Sorting
+        set enable_indexscan=off;
+        explain (costs off) select * from t order by a;
+        set enable_indexscan=on;
+
+    9、Concurrent building
+        select mode, granted from pg_locks where relation = 't'::regclass;
+        create index concurrently on t(a);
+
+    10、查看PG默认支持的索引及对应Handler类型
+        SELECT *, obj_description(oid, ‘pg_am’) FROM pg_am ORDER BY 1;
+
+    11、查看B树索引属性
+        select a.amname, p.name, pg_indexam_has_property(a.oid,p.name) from pg_am a, unnest(array[‘can_order’,‘can_unique’,‘can_multi_col’,‘can_exclude’]) p(name) where a.amname = ‘btree’ order by a.amname;
+
+    12、索引扩展
+        create extension postgis; -- PostGIS的矢量数据扩展
+        create extension postgis_raster; -- PostGIS的栅格数据扩展
+
+        select ST_SetSRID(ST_Point(-108,30.741),4326),
+                   ST_GeomFromText('POINT(-106.51 29.741)',4326)
+
+
+
+    13、索引大小：
+
+        CREATE INDEX t_brin ON t USING brin(a);
+
+        \di t
+        select relid, relname, seq_scan, idx_scan from pg_stat_user_tables;
+
+        SELECT relname, pg_size_pretty(pg_relation_size(oid))
+        FROM pg_class
+        WHERE relname LIKE 't\_%' or relname = 't'
+        ORDER BY relname;
+
+
+    14、查看pg_stat_user_tables中seq_scan是否很高
+        select relid, relname, seq_scan, idx_scan from pg_stat_user_tables;
+
+    15、查看pg_stat_statements中SQL执行频率和执行时间
+        select query,calls,total_time,mean_time from pg_stat_statements where query like 'select%' order by mean_time desc limit 5;
+
+    16、查看pg_stat_user_indexes，如果索引调用次数很少，可能没必要创建
+        select relname,indexrelname,idx_scan, idx_tup_read, idx_tup_fetch from pg_stat_user_indexes;
+
+    17、查看索引支持的类型
+        SELECT opfname FROM pg_opfamily, pg_am WHERE opfmethod = pg_am.oid AND amname = 'btree' ORDER BY 1;
+
+    18、查看索引支持的操作符
+        select amop.amopopr::regoperator as opfamily_operator, amop.amopstrategy from pg_am am, pg_opfamily opf, pg_amop amop where opf.opfmethod = am.oid and amop.amopfamily = opf.oid and am.amname = 'btree' and opf.opfname = 'bool_ops' order by amopstrategy;
+
+
